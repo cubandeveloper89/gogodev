@@ -1,4 +1,4 @@
-# comp_funcional
+# gogodev
 
 ## Project setup
 ```
