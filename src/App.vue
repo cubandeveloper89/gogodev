@@ -1,13 +1,15 @@
 <template>
-  <div>Mi VUE app!!! with Vite</div>
-  <OrderDetails/>
+  <div class="m-10">App in VUE</div>
+
+  <TaxCalculator/>
   
 </template>
 
 <script lang="ts" setup>
 
-import { ref } from 'vue';
-import OrderDetails from './components/OrderDetails.vue';
+import { onMounted, ref } from 'vue';
+import TaxCalculator from './components/TaxCalculator.vue';
+
 
 
 
@@ -24,9 +26,15 @@ import OrderDetails from './components/OrderDetails.vue';
   // data(){
     let nombre = 'Camilo';
     let count = ref(0);
+    let loading = ref(true);
     // return {numero}
   // }
 // })
+onMounted(() => {
+  setTimeout(() => {
+    loading.value = false;
+  }, 1000);
+});
 </script>
 
 <style>
