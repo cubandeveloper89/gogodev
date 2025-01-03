@@ -1,15 +1,15 @@
 <template>
-  <div>Loading Effect</div>
-  <OrderDetailLoader v-if="loading"/>
-  <OrderDetails v-else/>
+  <div class="m-10">App in VUE</div>
+
+  <TaxCalculator/>
   
 </template>
 
 <script lang="ts" setup>
 
 import { onMounted, ref } from 'vue';
-import OrderDetails from './components/OrderDetails.vue';
-import OrderDetailLoader from './components/orderDetailLoader.vue';
+import TaxCalculator from './components/TaxCalculator.vue';
+
 
 
 
