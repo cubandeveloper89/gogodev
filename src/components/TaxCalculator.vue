@@ -1,6 +1,6 @@
 <template>
     <div class="m-2 flex flex-col items-center">
-        <h1 v-font-size="30" class="m-2">Calculadora de impuestos</h1>
+        <h1 v-custom-size="35" class="m-2">Calculadora de impuestos</h1>
         <div class="flex items-center gap-5 border-black border-2 p-2">
             <label for="product" class="font-medium">Producto:</label>
             <input type="text" id="product" placeholder="Product name" v-model="newProduct" />

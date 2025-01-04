@@ -6,11 +6,15 @@ const app = createApp(App)
 
 app.directive('font-size', {
     beforeMount: (el, binding) =>{
-        el.style.fontSize = binding.value + 'px';
+        el.style.fontSize = '30px';
         el.style.color = 'red';
     },
 })
 
-
+app.directive('custom-size', {
+    beforeMount: (el, binding) =>{
+        el.style.fontSize = binding.value + 'px';
+    },
+})
 
 app.mount('#app')
