@@ -1,13 +1,13 @@
 <template>
     <div class="m-2 flex flex-col items-center">
-        <h1 class="m-2">Calculadora de impuestos</h1>
+        <h1 v-custom-size="35" class="m-2">Calculadora de impuestos</h1>
         <div class="flex items-center gap-5 border-black border-2 p-2">
             <label for="product" class="font-medium">Producto:</label>
             <input type="text" id="product" placeholder="Product name" v-model="newProduct" />
             <label for="amount" class="font-medium">Costo:</label>
             <input class=" w-14" type="number" id="amount" v-model="newAmount" />
         </div>
-        <button class="mt-4 p-2 rounded bg-slate-900 text-white" @click="addBill">Agregar gasto</button>
+        <button class="mt-4 p-2 rounded bg-slate-900 text-white ease-out duration-300 hover:scale-150" @click="addBill">Agregar gasto</button>
         <label for="income" class="font-medium mt-4">Gastos:</label>
         <div
         class="flex m-2 w-64 justify-between border-b-2 border-gray-300"
@@ -17,7 +17,16 @@
             <span>{{ bill.amount }} USD</span>
         </div>
         <!-- <button class="mt-4 p-2 rounded bg-slate-900 text-white" @click="calculateTax">Calcular impuestos</button> -->
-        <p class="mt-6" v-if="tax">Impuestos a pagar: <span class=" p-4 bg-red-700 rounded-md text-yellow-200 font-medium">{{ tax }}</span> USD</p>
+        <span 
+        class="mt-6 flex gap-2 items-center" 
+        v-if="tax"
+        >
+            Impuestos a pagar: 
+                <div id="breathing-button" class=" p-3 bg-red-700 rounded-md text-yellow-200 font-medium">
+                    {{ tax }}
+                </div>
+            USD
+        </span>
     </div>
 </template>
 
@@ -56,4 +65,57 @@ const tax = computed(() => {
 </script>
 
 <style scoped>
+#breathing-button {
+    -webkit-animation: breathing 5s ease-out infinite normal;
+    animation: breathing 5s ease-out infinite normal;
+    -webkit-font-smoothing: antialiased;   
+    }
+
+@-webkit-keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  25% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  60% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  100% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+@keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  25% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  60% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  100% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
 </style>
