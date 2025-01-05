@@ -1,5 +1,5 @@
 <template>
-  <div class="m-10">App in VUE</div>
+  <div class="m-10 bg-slate-400 p-3 text-center text-white font-medium text-lg" v-value-size:lg>App in VUE</div>
 
   <TaxCalculator/>
   

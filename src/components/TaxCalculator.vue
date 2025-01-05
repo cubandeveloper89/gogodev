@@ -20,10 +20,22 @@
         <span 
         class="mt-6 flex gap-2 items-center" 
         v-if="tax"
+        v-value-size:lg
         >
             Impuestos a pagar: 
                 <div id="breathing-button" class=" p-3 bg-red-700 rounded-md text-yellow-200 font-medium">
                     {{ tax }}
+                </div>
+            USD
+        </span>
+        <span 
+        class="mt-6 flex gap-2 items-center" 
+        v-if="tax"
+        v-value-size:lg
+        >
+            Total a pagar: 
+                <div id="breathing-button" class=" p-3 bg-red-700 rounded-md text-yellow-200 font-medium">
+                    {{ total }}
                 </div>
             USD
         </span>
@@ -40,6 +52,9 @@ let bills =  ref<{product:string, amount: number }[]>([
 ]);
 let newProduct = ref('');
 let newAmount = ref(0);
+let total = computed(()=>{
+    return bills.value.reduce((total, bill) => total + bill.amount, 0) + tax.value; 
+});
 const vat = 10;
 
 
