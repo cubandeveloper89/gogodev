@@ -8,7 +8,7 @@
             <input class=" w-14" type="number" id="amount" v-model="newAmount" />
         </div>
         <button class="mt-4 p-2 rounded bg-slate-900 text-white ease-out duration-300 hover:scale-150" @click="addBill">Agregar gasto</button>
-        <label for="income" class="font-medium mt-4">Gastos:</label>
+        <label for="income" class="font-bold mt-4" v-custom-font.lg.red>Gastos:</label>
         <div
         class="flex m-2 w-64 justify-between border-b-2 border-gray-300"
         v-for="(bill, index) in bills" :key="index"
